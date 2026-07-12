@@ -6,6 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
@@ -14,10 +18,6 @@
     <img class="tie" src="./images/tie.png" alt="">
     <div class="hint" id="hint"></div>
   </div>
-  <div class="video-wrapper">
-    <video id="bgVideo" src="./images/video.MOV" muted playsinline></video>
-  </div>
-  <div class="white-overlay"></div>
 
   <div class="text">
     <h1 class="title">парфюмерное ателье</h1>
@@ -30,6 +30,42 @@
       а теперь коснись галстука
     </p>
   </div>
+  <div class="video-wrapper">
+    <video id="bgVideo" src="./images/video.MOV" muted playsinline></video>
+  </div>
+  <div class="white-overlay">
+    <div class="main-container">
+
+      <header class="header">
+        <a class="link" href="#">logo</a>
+        <a class="link" href="#">menu</a>
+      </header>
+      <div class="banner">
+        <img class="banner-image" src="./images/banner.png" alt="">
+        <div class="banner-info">
+          <h2 class="banner-title">Sospiro Erbo Pura 30 ML</h2>
+          <p class="noti">ноты:</p>
+          <p class="noti-items">апельсин, бергамот, лимон, фруктовые ноты, белый мускус, амбра,
+            мадагаскарская ваниль</p>
+          <div class="price-wrapper">
+            <button class="banner-btn">BUY</button>
+            <span class="banner-price">2950Р</span>
+          </div>
+        </div>
+      </div>
+      <div class="categories">
+        <ul class="up">
+          <li class="item up-item">
+            восточные
+            <img src="" alt="">
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+
 
   <div class="ripple" id="ripple"></div>
   <script src="./script.js"></script>

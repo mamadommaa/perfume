@@ -4,6 +4,7 @@ const body = document.body;
 const video = document.getElementById('bgVideo');
 const videoWrapper = document.querySelector('.video-wrapper');
 const whiteOverlay = document.querySelector('.white-overlay');
+const mainContainer = document.querySelector('.main-container');
 
 let pulled = false;
 
@@ -28,6 +29,7 @@ tie.addEventListener('click', () => {
 
   setTimeout(() => {
     whiteOverlay.classList.add('visible');
+    mainContainer.classList.add('visible');
   }, 1200);
 });
 
