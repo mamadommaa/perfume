@@ -3,7 +3,6 @@ const ripple = document.querySelector('.ripple');
 const body = document.body;
 const video = document.getElementById('bgVideo');
 const videoWrapper = document.querySelector('.video-wrapper');
-const whiteOverlay = document.querySelector('.white-overlay');
 const mainContainer = document.querySelector('.main-container');
 
 let pulled = false;
@@ -28,32 +27,18 @@ tie.addEventListener('click', () => {
   }, 1000);
 
   setTimeout(() => {
-    whiteOverlay.classList.add('visible');
     mainContainer.classList.add('visible');
   }, 1200);
 });
 
 function playVideoLoop() {
-  video.playbackRate = 2;
+  video.playbackRate = 1;
   video.play();
 
-  let forward = true;
-
-  function checkLoop() {
-    if (forward && video.currentTime >= video.duration - 0.2) {
-      forward = false;
-      video.playbackRate = -2;
-      video.play();
-    }
-
-    if (!forward && video.currentTime <= 0.2) {
-      forward = true;
-      video.playbackRate = 2;
-      video.play();
-    }
-
-    requestAnimationFrame(checkLoop);
+  function onVideoEnd() {
+    video.currentTime = 0;
+    video.play();
   }
 
-  requestAnimationFrame(checkLoop);
+  video.addEventListener('ended', onVideoEnd);
 }
