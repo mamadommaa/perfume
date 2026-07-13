@@ -8,6 +8,8 @@ tie.addEventListener('click', () => {
     preview.style.display = 'none';
     block.style.display = 'block';
 
+    block.classList.add('show');
+
     video.play();
   }, 600);
 });
