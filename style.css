@@ -32,8 +32,9 @@ body {
 
 .tie {
   position: relative;
-  top: -40px;
+  top: -10px;
   transition: transform 0.2s ease;
+  width: clamp(120px, 30vw, 450px);
 }
 
 .tie:active {
@@ -42,7 +43,8 @@ body {
 
 .title {
   margin-bottom: 30px;
-  font-size: 80px;
+  /* font-size: 80px; */
+  font-size: clamp(20px, 6vw, 30px);
   font-weight: 400;
   color: black;
   font-family: 'Literature-Decor', sans-serif;
@@ -50,7 +52,8 @@ body {
 
 .text {
   max-width: 1100px;
-  font-size: 30px;
+  /* font-size: 30px; */
+  font-size: clamp(5px, 2.2vw, 20px);
   color: black;
 }
 
@@ -63,13 +66,25 @@ body {
   background-color: black;
   min-height: 100vh;
   color: white;
-  background-image: url(./images/ribbon.png);
-  background-repeat: repeat-y;
-  background-position: 450px;
+  position: relative;
+  padding: 20px;
+}
+
+.something-block::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  /* растягивается по всей высоте контента */
+  left: 10%;
+
+  width: 150px;
+  background: url("./images/ribbon.png") repeat-y top center;
+  z-index: 1;
 }
 
 /* анимация */
-.something-block.show {
+/* .something-block.show {
   animation: reveal 2.5s ease forwards;
 }
 
@@ -81,7 +96,7 @@ body {
   to {
     clip-path: circle(100% at 50% 50%);
   }
-}
+} */
 
 
 /* обертка для видео и всего контента */
@@ -90,12 +105,13 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
+
 }
 
 /* весь контент */
 .something-block__content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 /* видео */
@@ -104,29 +120,71 @@ body {
   z-index: 0;
   top: -100px;
   filter: brightness(0.4);
-
+  width: 100%;
+  max-width: 1200px;
 }
 
 video {
-  max-width: 1200px;
+  width: 100%;
 }
 
 /* ----------------------------------------------------------------------------------------------------------- */
 
 /* ШАПКА */
 .header {
-  width: 1200px;
+  max-width: 1200px;
+  width: 100%;
   padding: 20px 0;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 500px;
+  margin-bottom: 35%;
 }
 
 .header__link {
   text-decoration: none;
   color: white;
   font-size: 30px;
+  display: block;
+}
+
+.header__music-block {
+  display: flex;
+  gap: 10px;
+}
+
+.header__music-img {
+  display: block;
+  width: 30px;
+  height: 30px;
+}
+
+.header__music {
+  background-color: transparent;
+  border: none;
+  padding: 5px;
+  position: relative;
+  cursor: pointer;
+}
+
+/* анимация зачеркивания */
+.header__music::after {
+  content: "";
+  position: absolute;
+  left: 2px;
+  bottom: 2px;
+
+  width: calc(100% + 4px);
+  height: 5px;
+  background: #1573E0;
+
+  transform: rotate(-45deg) scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.3s ease;
+}
+
+.header__music.muted::after {
+  transform: rotate(-45deg) scaleX(1);
 }
 
 /* ----------------------------------------------------------------------------------------------------------- */
@@ -174,7 +232,8 @@ video {
 }
 
 .banner-info {
-  width: 750px;
+  max-width: 750px;
+  width: 100%;
   border: 1px solid rgb(149, 144, 144);
   padding: 25px;
 }

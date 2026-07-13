@@ -17,7 +17,6 @@
   <div class="preview">
     <div class="tie-wrapper">
       <img class="tie" src="./images/tie.png" alt="">
-      <div class="hint" id="hint"></div>
     </div>
     <div class="text">
       <h1 class="title">парфюмерное ателье</h1>
@@ -34,14 +33,23 @@
 
   <!-- основной контент -->
   <div class="something-block">
+    <!-- <img class="something-block__ribbon" src="./images/ribbon.png" alt=""> -->
+
     <div class="something-block__wrapper">
       <div class="video-wrapper">
         <video src="./images/video.MOV" loop muted></video>
       </div>
       <div class="something-block__content">
+
         <header class="header">
           <a class="header__link" href="#">logo</a>
-          <a class="header__link" href="#">menu</a>
+          <div class="header__music-block">
+            <audio class="audio" src="./images/sound.mp3" loop></audio>
+            <button class="header__music">
+              <img class="header__music-img " src="./images/mute.png" alt="">
+            </button>
+            <a class="header__link" href="#">menu</a>
+          </div>
         </header>
         <div class="banner">
           <img class="banner-image" src="./images/banner.png" alt="">
